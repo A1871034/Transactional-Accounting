@@ -1,0 +1,56 @@
+[
+    {
+        "name": "A House",
+        "id": 0,
+        "casual": true,
+        "pay_week_start_day": 1,
+        "weeks_per_payslip": 1,
+        "min_hours_requiring_break": 5,
+        "min_break_time_mins": 30,
+        "base_rate": 24.08,
+        "age_modifiers": {
+            "min":16, 
+            "16":0.5, 
+            "17":0.6,
+            "18":0.7,
+            "19":0.8,
+            "20":0.9,
+            "21":1.0,
+            "max":21
+        },
+        "penalties": [
+            {
+                "name": "Weekdays 7pm to Midnight",
+                "eval_type": "additional",
+                "value": 2.62,
+                "days": [0,1,2,3,4],
+                "start_time": "19:00",
+                "end_time": null
+            },
+            {
+                "name": "Weekdays Midnight to 7am",
+                "eval_type": "additional",
+                "value": 3.93,
+                "days": [0,1,2,3,4],
+                "start_time": "00:00",
+                "end_time": "07:00"
+            },
+            {
+                "name": "Saturdays",
+                "eval_type": "multiplicative",
+                "value": 0.25,
+                "days": [5],
+                "start_time": "00:00",
+                "end_time": null
+            },
+            {
+                "name": "Sundays",
+                "eval_type": "multiplicative",
+                "value": 0.4,
+                "days": [6],
+                "start_time": "00:00",
+                "end_time": null
+            }
+        ]
+    }
+]
